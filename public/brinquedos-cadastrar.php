@@ -2,13 +2,13 @@
 
 include "../../infra/conexao.php";
 
-$nome = $_POST["nome-prato"];
+$nome = $_POST["nome-brinquedo"];
 $descricao = $_POST["descricao"];
 $preco = $_POST["preco"];
 $categoria = $_POST["categoria"];
 $id_usuario = $_POST["id_usuario"];
 
-$query = "INSERT INTO prato(nome, descricao, preco, categoria, id_usuario) 
+$query = "INSERT INTO brinquedos(nome, descricao, preco, categoria, id_usuario) 
 VALUES (?, ?, ?, ?, ?)";
 
 $stmt = mysqli_prepare($conexao, $query);
