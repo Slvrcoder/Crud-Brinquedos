@@ -1,3 +1,14 @@
+<?php
+require_once "infra/conexao.php";
+
+$sql = "SELECT * FROM brinquedos";
+$resultado = mysqli_query($conexao, $sql);
+
+if (!$resultado) {
+    die("Erro na consulta: " . mysqli_error($conexao));
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +34,7 @@
                 <label for="categoria">Categoria:</label>
                 <input type="text" name="categoria">
                 <br>
-                
+
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
@@ -39,7 +50,7 @@
                     <th>Categoria</th>
                 </tr>
 
-                <?php while ($linha = mysqli_fetch_assoc($brinquedos)) { ?>
+                <?php while ($linha = mysqli_fetch_assoc($resultado)) { ?>
                     <tr>
                         <td><?php echo $linha["id"] ?></td>
                         <td><?php echo $linha["nome"] ?></td>
