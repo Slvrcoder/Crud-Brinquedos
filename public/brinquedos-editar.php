@@ -7,7 +7,7 @@ $id = $_GET["id"];
 $stmt = mysqli_prepare(
     $conexao,
 
-    "SELECT * FROM prato WHERE id = ?"
+    "SELECT * FROM brinquedos WHERE id = ?"
 );
 
 mysqli_stmt_bind_param($stmt, "i", $id);
@@ -16,7 +16,7 @@ mysqli_stmt_execute($stmt);
 
 $resultado = mysqli_stmt_get_result($stmt);
 
-$pratos =mysqli_fetch_assoc($resultado);
+$brinquedos =mysqli_fetch_assoc($resultado);
 
 ?>
 
@@ -26,13 +26,13 @@ $pratos =mysqli_fetch_assoc($resultado);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratos/title>
+    <title>Brinquedos</title>
     <link rel="stylesheet" href="style/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Pratos</h1>
+        <h1>Brinquedos</h1>
     </header>
     <main>
 
