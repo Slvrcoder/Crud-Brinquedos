@@ -1,12 +1,11 @@
 <?php
 
-$host = "localhost:6608";
+$host = "localhost";
 $usuario = "root";
 $senha = "";
 $banco = "brinquedos";
-$porta = 6608;
 
-$conexao = new mysqli($host, $usuario, $senha, $banco, $porta);
+$conexao = new mysqli($host, $usuario, $senha, $banco,6608);
 
 if ($conexao->connect_error) {
     die("Erro na conexão com o banco: " . $conexao->connect_error);
