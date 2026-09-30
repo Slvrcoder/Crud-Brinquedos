@@ -7,8 +7,7 @@ $descricao = $_POST["descricao"];
 $preco = $_POST["preco"];
 $categoria = $_POST["categoria"];
 
-$query = "INSERT INTO brinquedos(nome, descricao, preco, categoria) 
-VALUES (?, ?, ?, ?)";
+$query = "INSERT INTO brinquedos(nome, descricao, preco, categoria) VALUES (?, ?, ?, ?)";
 
 $stmt = mysqli_prepare($conexao, $query);
 

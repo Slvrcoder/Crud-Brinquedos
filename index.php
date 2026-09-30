@@ -34,6 +34,9 @@ if (!$resultado) {
                 <label for="categoria">Categoria:</label>
                 <input type="text" name="categoria">
                 <br>
+                <label for="faixa_etaria">Faixa etária:</label>
+                <input type="text" name="faixa_etaria">
+                <br>
 
                 <button type="submit">Cadastrar</button>
             </form>
@@ -41,12 +44,13 @@ if (!$resultado) {
 
         <div>
             <h2>Brinquedos Cadastrados</h2>
-            <table>
+            <table border="1">
                 <tr>
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>Preço</th>
                     <th>Categoria</th>
+                    <th>Faixa Etária</th>
                 </tr>
 
                 <?php while ($linha = mysqli_fetch_assoc($resultado)) { ?>
@@ -55,9 +59,10 @@ if (!$resultado) {
                         <td><?php echo $linha["descricao"] ?></td>
                         <td><?php echo $linha["preco"] ?></td>
                         <td><?php echo $linha["categoria"] ?></td>
+                        <td><?php echo $linha["faixa_etaria"] ?></td>
                         <td>
-                            <a href="public/brinquedos/brinquedos-editar.php? id=<?php echo $linha["id"] ?>">Editar</a>
-                            <a href="public/brinquedos/brinquedos-excluir.php? id=<?php echo $linha["id"] ?>" onclick="return confirm('Tem certeza que deseja excluir este brinquedo?')">Excluir</a>
+                            <a href="public/brinquedos-editar.php? id=<?php echo $linha["id"] ?>">Editar</a>
+                            <a href="public/brinquedos-excluir.php? id=<?php echo $linha["id"] ?>" onclick="return confirm('Tem certeza que deseja excluir este brinquedo?')">Excluir</a>
                         </td>
                     </tr>
                 <?php } ?>
