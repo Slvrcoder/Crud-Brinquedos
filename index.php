@@ -57,7 +57,7 @@ if (!$resultado) {
                         <td><?php echo $linha["categoria"] ?></td>
                         <td>
                             <a href="public/brinquedos/brinquedos-editar.php? id=<?php echo $linha["id"] ?>">Editar</a>
-                            <a href="public/brinquedos/brinquedos-excluir.php? id=<?php echo $linha["id"] ?>">Excluir</a>
+                            <a href="public/brinquedos/brinquedos-excluir.php? id=<?php echo $linha["id"] ?>" onclick="return confirm('Tem certeza que deseja excluir este brinquedo?')">Excluir</a>
                         </td>
                     </tr>
                 <?php } ?>
