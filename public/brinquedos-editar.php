@@ -39,8 +39,7 @@ $brinquedos =mysqli_fetch_assoc($resultado);
 <div>
             <h2>Editando o brinquedo!</h2>
             <form action="public/brinquedos-editar.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo $brinquedos["id"]?>">
-
+                
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" value="<?php echo $brinquedos["nome"]?>">
                 <br>
