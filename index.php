@@ -21,7 +21,7 @@ if (!$resultado) {
 
         <div>
             <h2>Adicione um novo Brinquedo!</h2>
-            <form action="public/brinquedos/brinquedos-cadastrar.php" method="POST">
+            <form action="public/brinquedos-cadastrar.php" method="POST">
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome-brinquedo">
                 <br>
@@ -29,7 +29,7 @@ if (!$resultado) {
                 <input type="text" name="descricao">
                 <br>
                 <label for="preco">Preço:</label>
-                <input type="number" name="preco" step="0.01">
+                <input type="number" name="preco" step="0.01" min="0">
                 <br>
                 <label for="categoria">Categoria:</label>
                 <input type="text" name="categoria">
@@ -43,7 +43,6 @@ if (!$resultado) {
             <h2>Brinquedos Cadastrados</h2>
             <table>
                 <tr>
-                    <th>ID</th>
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>Preço</th>
@@ -52,7 +51,6 @@ if (!$resultado) {
 
                 <?php while ($linha = mysqli_fetch_assoc($resultado)) { ?>
                     <tr>
-                        <td><?php echo $linha["id"] ?></td>
                         <td><?php echo $linha["nome"] ?></td>
                         <td><?php echo $linha["descricao"] ?></td>
                         <td><?php echo $linha["preco"] ?></td>

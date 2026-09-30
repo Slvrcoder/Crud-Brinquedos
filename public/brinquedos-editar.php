@@ -1,6 +1,6 @@
 <?php
 
-include "../../infra/conexao.php";
+include "../infra/conexao.php";
 
 $id = $_GET["id"];
 
@@ -44,14 +44,14 @@ $brinquedos =mysqli_fetch_assoc($resultado);
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" value="<?php echo $brinquedos["nome"]?>">
                 <br>
-                <label for="email">Descrição:</label>
+                <label for="descricao">Descrição:</label>
                 <input type="text" name="descricao" value="<?php echo $brinquedos["descricao"]?>">>
                 <br>
-                <label for="senha">Preço:</label>
-                <input type="password" name="preco" value="<?php echo $brinquedos["preco"]?>">>
+                <label for="preco">Preço:</label>
+                <input type="number" name="preco" value="<?php echo $brinquedos["preco"]?>" step="0.01" min="0">
                 <br>
                 <label for="categoria">Categoria:</label>
-                <input type="text" name="categoria" value="<?php echo $brinquedos["categoria"]?>">>
+                <input type="text" name="categoria" value="<?php echo $brinquedos["categoria"]?>">
                 <br>
 
                 <button type="submit">Atualizar</button>

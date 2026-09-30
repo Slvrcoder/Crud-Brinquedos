@@ -4,7 +4,6 @@ use brinquedos;
 
 
 CREATE TABLE brinquedos (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     categoria VARCHAR(60) NOT NULL,
     descricao varchar(255) DEFAULT NULL,
